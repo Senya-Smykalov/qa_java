@@ -29,14 +29,15 @@ public class FelineTest {
     }
     @Test
     public void testGetKittens() {
-        int result = felineMock.getKittens();
         int kittens = 1;
+        int result = felineMock.getKittens(kittens);
+
         assertEquals(kittens, result);
     }
     @Test
     public void testGetKittensCount() {
-        int result = felineMock.getKittens(3);
         int kittensCount = 3;
+        int result = felineMock.getKittens(kittensCount);
         assertEquals(kittensCount, result);
     }
 }

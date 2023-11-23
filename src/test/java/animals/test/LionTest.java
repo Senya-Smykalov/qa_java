@@ -19,10 +19,10 @@ public class LionTest {
     private Feline felineTwo;
     @Test
     public void testGetKittens() {
-        Mockito.when(felineTwo.getKittens()).thenReturn(3);
+        int kittens = 3;
+        Mockito.when(felineTwo.getKittens()).thenReturn(kittens);
         Lion lion = new Lion("Самец", felineTwo);
         int result = lion.getKittens();
-        int kittens = 3;
         assertEquals(kittens, result);
     }
     @Test
@@ -47,8 +47,8 @@ public class LionTest {
     @Test
     public void errorGender(){
         Lion lion = new Lion("Самец", felineTwo);
-        boolean result = lion.doesHaveMane();
-        assertTrue(result);
+        String result = String.valueOf(lion.doesHaveMane());
+        assertTrue(lion.doesHaveMane());
     }
 
 }
