@@ -30,11 +30,13 @@ public class FelineTest {
     @Test
     public void testGetKittens() {
         int result = felineMock.getKittens();
-        assertEquals(1, result);
+        int kittens = 1;
+        assertEquals(kittens, result);
     }
     @Test
     public void testGetKittensCount() {
         int result = felineMock.getKittens(3);
-        assertEquals(3, result);
+        int kittensCount = 3;
+        assertEquals(kittensCount, result);
     }
 }

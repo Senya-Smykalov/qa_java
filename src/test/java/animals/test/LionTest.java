@@ -22,7 +22,8 @@ public class LionTest {
         Mockito.when(felineTwo.getKittens()).thenReturn(3);
         Lion lion = new Lion("Самец", felineTwo);
         int result = lion.getKittens();
-        assertEquals(3, result);
+        int kittens = 3;
+        assertEquals(kittens, result);
     }
     @Test
     public void testDoesHaveMane() {
@@ -39,8 +40,15 @@ public class LionTest {
         assertEquals(Arrays.asList("Мясо", "Рыбов"), result);
     }
     @Test
-    public void errorGender() {
+    public void genderTest() {
         assertThrows(IllegalArgumentException.class, () -> new Lion("Что-то другое", felineTwo));
+    }
+
+    @Test
+    public void errorGender(){
+        Lion lion = new Lion("Самец", felineTwo);
+        boolean result = lion.doesHaveMane();
+        assertTrue(result);
     }
 
 }
